@@ -9,7 +9,7 @@ WORKDIR /gogs.io/gogs
 COPY . .
 RUN make build TAGS="cert pam"
 
-FROM alpine:3.11
+FROM alpine:3.16.7
 RUN wget https://github.com/tianon/gosu/releases/download/1.11/gosu-amd64 -O /usr/sbin/gosu \
   && chmod +x /usr/sbin/gosu \
   && echo http://dl-2.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories \
